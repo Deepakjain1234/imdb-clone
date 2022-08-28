@@ -49,6 +49,17 @@ const Movie = () => {
                                 ""
                             }
                         </div>
+                        <div className="movie__genres">
+                            {
+                                currentMovieDetail && currentMovieDetail.genres
+                                ? 
+                                currentMovieDetail.genres.map(genre => (
+                                    <><span className="movie__genre" id={genre.id}>actor name</span></>
+                                )) 
+                                : 
+                                ""
+                            }
+                        </div>
                     </div>
                     <div className="movie__detailRightBottom">
                         <div className="synopsisText">Synopsis</div>
