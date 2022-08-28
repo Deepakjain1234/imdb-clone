@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import "./movie.css"
 import { useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Movie = () => {
     const [currentMovieDetail, setMovie] = useState()
@@ -31,7 +32,7 @@ const Movie = () => {
                 <div className="movie__detailRight">
                     <div className="movie__detailRightTop">
                         <div className="movie__name">{currentMovieDetail ? currentMovieDetail.original_title : ""}</div>
-                        <div className="movie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
+                        {/* <div className="movie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div> */}
                         <div className="movie__rating">
                             {currentMovieDetail ? currentMovieDetail.vote_average: ""} <i class="fas fa-star" />
                             <span className="movie__voteCount">{currentMovieDetail ? "(" + currentMovieDetail.vote_count + ") votes" : ""}</span>
@@ -54,7 +55,7 @@ const Movie = () => {
                                 currentMovieDetail && currentMovieDetail.genres
                                 ? 
                                 currentMovieDetail.genres.map(genre => (
-                                    <><span className="movie__genre" id={genre.id}>actor name</span></>
+                                    <><a href="https://imdb-clone-lime.vercel.app/actor"><span className="movie__genre" id={genre.id}>actor name</span></a></>
                                 )) 
                                 : 
                                 ""
